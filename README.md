@@ -1,16 +1,17 @@
-# React + Vite
+# Frontend Challenge - CoreStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🧠 Ragionamento Iniziale
+- **Primo step:** Ho configurato l'ambiente con React e Bootstrap, dando priorità al fetching dei dati e alla gestione degli stati di loading/error.
+- **Importanza:** Ho puntato sulla UX: un'applicazione deve essere parlante. Ho aggiunto feedback visivi per ogni azione (caricamento, validazione form, risultati vuoti).
+- **Ambiguità:** Dato che l'API è mock, ho gestito l'aggiunta dei post localmente per simulare la persistenza immediata nell'interfaccia.
 
-Currently, two official plugins are available:
+## 🚀 Scelte Implementative
+- **Paginazione (Bonus):** Ho diviso i post in pagine da 10 elementi per migliorare la leggibilità e le performance di rendering.
+- **Filtro con Highlight (Bonus):** Ho aggiunto una barra di ricerca che filtra in tempo reale titolo e corpo del post, evidenziando il testo corrispondente per guidare l'occhio dell'utente.
+- **Validazione:** Il form impedisce l'invio di campi vuoti mostrando un messaggio d'errore contestuale invece di un alert bloccante. Mentre in caso di successo mostro un mesaggio di successo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔴 Cosa non è stato fatto
+- **Persistence:** I dati aggiunti non sopravvivono al refresh del browser (servirebbe il LocalStorage o un database reale).
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Miglioramenti futuri
+- Implementazione di **Persistenza** dei dati.
