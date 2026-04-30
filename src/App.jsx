@@ -111,7 +111,7 @@ function App() {
                   />
                 </div>
 
-                {formError && <p className="text-danger">Per favore, compila tutti i campi.</p>}
+                {formError && <p className="text-danger">Please fill out all fields</p>}
 
                 <button type='submit' className='btn btn-primary'>
                   Add Post
@@ -129,14 +129,17 @@ function App() {
             <input
               type="text"
               className="form-control mb-4"
-              placeholder="Cerca un post..."
-              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search for a post..."
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCurrentPage(1);
+              }}
             />
 
             <div className='card my-3 shadow p-3 mb-5 bg-body'>
-              {filteredPosts.length === 0 ? (
-                <p className='text-center'>Nessun post trovato.</p>
-              ) : (filteredPosts.map(post => (
+              {currentPosts.length === 0 ? (
+                <p className='text-center'>No posts found.</p>
+              ) : (currentPosts.map(post => (
                 <section key={post.id} className='my-3 p-3 border-bottom'>
 
                   <h3 className='fw-bold'>
@@ -157,7 +160,7 @@ function App() {
                 Prev
               </button>
 
-              <span className="align-self-center">Pagina {currentPage} di {totalPages}</span>
+              <span className="align-self-center">Page {currentPage} of {totalPages}</span>
 
               <button
                 className="btn btn-outline-primary"
